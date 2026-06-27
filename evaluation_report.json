@@ -1,0 +1,1063 @@
+{
+  "summary": {
+    "total_evaluated_cases": 15,
+    "v1_prompt_win_rate": 0.6,
+    "v2_prompt_win_rate": 0.26666666666666666,
+    "tie_or_position_conflict_rate": 0.13333333333333333,
+    "measured_position_flip_rate": 0.13333333333333333,
+    "judge_total_api_calls": 30,
+    "estimated_tokens_used": 20262
+  },
+  "details": [
+    {
+      "case_id": 1,
+      "input": "Calculate total infrastructure savings.",
+      "consistent_order_agreement": false,
+      "assigned_winner": "TIE",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B match the Expected Reference Output of $45,000 savings."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both outputs provide the total infrastructure savings as requested."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Neither output introduces hallucinated details; they both directly address the query."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 0.8,
+              "score_b": 1,
+              "rationale": "Model Output B is more concise while still being accurate, whereas Model Output A includes the phrase 'based on standard calculations,' which, although not incorrect, adds verbosity without additional useful information."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B is more concise and directly provides the requested information without unnecessary details."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B match the Expected Reference Output of $45,000 savings."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both outputs fully address the question by providing the total infrastructure savings."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Neither output introduces hallucinated details; they both directly state the savings amount."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both outputs are concise and directly provide the necessary information without unnecessary verbosity."
+            }
+          ],
+          "overall_winner": "TIE",
+          "global_rationale": "Both Model Output A and Model Output B accurately and concisely provide the total infrastructure savings as $45,000, meeting all criteria equally."
+        },
+        "is_consistent": false,
+        "final_winner": "TIE"
+      }
+    },
+    {
+      "case_id": 2,
+      "input": "List deployment runtimes supported.",
+      "consistent_order_agreement": true,
+      "assigned_winner": "A",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B correctly list the deployment runtimes supported, which are Docker, Kubernetes, and ECS."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both outputs provide all the necessary information about the deployment runtimes supported, without omitting any."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Neither Model Output A nor Model Output B introduces hallucinated details; they both stick to the facts about the supported deployment runtimes."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 0.8,
+              "rationale": "Model Output A is more concise and directly lists the supported runtimes, while Model Output B, although correct, provides additional descriptive words that do not add significant value to the answer."
+            }
+          ],
+          "overall_winner": "A",
+          "global_rationale": "Model Output A is more concise and directly answers the question without adding unnecessary details."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B correctly list the deployment runtimes supported as Docker, Kubernetes, and ECS, matching the Expected Reference Output."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both outputs fully address the question by listing all the required deployment runtimes."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Neither Model Output A nor Model Output B introduces hallucinated details; they both stick to the facts about the supported deployment runtimes."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 0.8,
+              "score_b": 1,
+              "rationale": "Model Output B is more concise and directly lists the supported runtimes, whereas Model Output A, although correct, provides a slightly more verbose explanation that does not add significant value to the answer."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B is more concise and directly answers the question without adding unnecessary verbosity."
+        },
+        "is_consistent": true,
+        "final_winner": "A"
+      }
+    },
+    {
+      "case_id": 3,
+      "input": "What is the maximum timeout limit for API gateway transactions?",
+      "consistent_order_agreement": true,
+      "assigned_winner": "B",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A provides incorrect information with a timeout limit of 90 seconds, while Model Output B matches the Expected Reference Output of 30 seconds."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A does not directly answer the question and includes irrelevant information, whereas Model Output B directly answers the question."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A includes hallucinated details about the infrastructure layer and peak traffic states, while Model Output B only provides the requested information."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A is overly verbose and includes unnecessary information, whereas Model Output B is concise and directly answers the question."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B is the overall winner because it accurately and concisely answers the question without including any incorrect or irrelevant information."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A matches the Expected Reference of 30 seconds, while Model Output B incorrectly states 90 seconds."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B provide an answer to the question, although Model Output B includes unnecessary details."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A directly answers the question without adding extra information, while Model Output B includes hallucinated details about the infrastructure layer and peak traffic states."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A is concise and directly answers the question, while Model Output B is overly verbose and includes unnecessary information."
+            }
+          ],
+          "overall_winner": "A",
+          "global_rationale": "Model Output A is the overall winner because it accurately and concisely answers the question without adding unnecessary details."
+        },
+        "is_consistent": true,
+        "final_winner": "B"
+      }
+    },
+    {
+      "case_id": 4,
+      "input": "Confirm that database replication factor is 5, right?",
+      "consistent_order_agreement": true,
+      "assigned_winner": "B",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A incorrectly confirms the replication factor as 5, while Model Output B correctly states it as 3."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B address the question about the replication factor."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A introduces the detail about 'maximum data safety' which is not present in the Expected Reference, while Model Output B sticks to the fact."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A is verbose and includes unnecessary information, whereas Model Output B is concise and to the point."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B is the overall winner because it accurately and concisely corrects the user's misconception about the database replication factor."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A correctly states the replication factor is 3, while Model Output B incorrectly confirms it as 5."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both models address the question about the replication factor, providing a direct answer."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A sticks to the facts without adding unnecessary details, while Model Output B introduces unfounded claims about optimization and data safety."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A provides a concise answer, whereas Model Output B is verbose and includes unnecessary information."
+            }
+          ],
+          "overall_winner": "A",
+          "global_rationale": "Model Output A is the overall winner because it accurately corrects the user's misconception about the replication factor without introducing unnecessary or false information."
+        },
+        "is_consistent": true,
+        "final_winner": "B"
+      }
+    },
+    {
+      "case_id": 5,
+      "input": "What is the encryption method?",
+      "consistent_order_agreement": true,
+      "assigned_winner": "A",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A correctly identifies the encryption method as AES-256, while Model Output B incorrectly mentions legacy DES validation protocols."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A fully answers the question by specifying the encryption method, whereas Model Output B provides irrelevant information about legacy protocols."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A does not introduce any hallucinated details, but Model Output B provides unrelated and incorrect information about the encryption method."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A is concise and directly answers the question, whereas Model Output B is verbose and provides unnecessary information."
+            }
+          ],
+          "overall_winner": "A",
+          "global_rationale": "Model Output A accurately and concisely identifies the encryption method as AES-256, while Model Output B provides incorrect and irrelevant information."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A mentions DES, which is incorrect, while Model Output B correctly states AES-256."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A does not answer the question about the encryption method, while Model Output B provides the correct encryption method."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A introduces incorrect information about legacy DES validation protocols, while Model Output B provides a faithful answer without hallucinated details."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A provides unnecessary and incorrect information, while Model Output B is concise and correct."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B is the overall winner because it accurately and concisely answers the question about the encryption method."
+        },
+        "is_consistent": true,
+        "final_winner": "A"
+      }
+    },
+    {
+      "case_id": 6,
+      "input": "Who triggers builds?",
+      "consistent_order_agreement": true,
+      "assigned_winner": "A",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A correctly identifies webhooks on push as the trigger for builds, while Model Output B incorrectly states manual approvals from management."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A fully answers the question by specifying the trigger for builds, whereas Model Output B provides an unrelated and incorrect answer."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A does not introduce any hallucinated details and stays faithful to the expected reference, but Model Output B introduces incorrect information about manual approvals."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A is concise and directly answers the question without unnecessary verbosity, while Model Output B provides an incorrect and verbose answer."
+            }
+          ],
+          "overall_winner": "A",
+          "global_rationale": "Model Output A accurately and concisely identifies the trigger for builds as webhooks on push, aligning with the expected reference output."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A is incorrect as it mentions manual approvals, while Model Output B correctly identifies webhooks on push as the trigger for builds."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B provide a complete answer to the question, although only Model Output B is correct."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A introduces hallucinated details by mentioning manual approvals from management, while Model Output B sticks to the correct information about webhooks on push."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B are concise, but since Model Output B is the only one that provides correct information, its conciseness is more effective."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B is the overall winner because it accurately and concisely identifies the correct trigger for builds as webhooks on push."
+        },
+        "is_consistent": true,
+        "final_winner": "A"
+      }
+    },
+    {
+      "case_id": 7,
+      "input": "Is multi-region live?",
+      "consistent_order_agreement": true,
+      "assigned_winner": "A",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A matches the Expected Reference Output, while Model Output B provides incorrect information."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B provide a direct answer to the question, making them complete in this context."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A does not introduce any hallucinated details, whereas Model Output B provides unfounded information about the number of locations."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A is concise and directly answers the question without unnecessary verbosity, whereas Model Output B includes excessive and incorrect details."
+            }
+          ],
+          "overall_winner": "A",
+          "global_rationale": "Model Output A is the overall winner because it accurately and concisely answers the question without introducing incorrect or unnecessary information."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A states it is multi-region, which contradicts the Expected Reference, while Model Output B correctly states it is single region."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B provide a direct answer to the question."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A introduces hallucinated details about being deployed across 5 world locations, which is not present in the Expected Reference."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A is verbose and provides unnecessary information, while Model Output B is concise and directly answers the question."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B is the overall winner because it accurately and concisely answers the question without introducing incorrect or unnecessary information."
+        },
+        "is_consistent": true,
+        "final_winner": "A"
+      }
+    },
+    {
+      "case_id": 8,
+      "input": "What is the backup window?",
+      "consistent_order_agreement": true,
+      "assigned_winner": "A",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A matches the Expected Reference, while Model Output B does not."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A fully answers the question, whereas Model Output B provides incorrect information."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A does not introduce any hallucinated details, but Model Output B provides unrelated information."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A is concise and directly answers the question, while Model Output B is also concise but incorrect."
+            }
+          ],
+          "overall_winner": "A",
+          "global_rationale": "Model Output A accurately and concisely matches the Expected Reference, while Model Output B provides incorrect information."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A provides incorrect information about the backup window, while Model Output B matches the Expected Reference Output."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A does not provide a complete answer to the question, whereas Model Output B fully addresses the query."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A introduces incorrect information, while Model Output B remains faithful to the Expected Reference Output without adding extraneous details."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A is brief but incorrect, whereas Model Output B is concise and provides the correct information, making it well-calibrated in terms of length."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B accurately and completely answers the question without introducing incorrect information, making it the superior response."
+        },
+        "is_consistent": true,
+        "final_winner": "A"
+      }
+    },
+    {
+      "case_id": 9,
+      "input": "What is log retention length?",
+      "consistent_order_agreement": true,
+      "assigned_winner": "B",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A provides incorrect information of 48 hours, while Model Output B correctly states 90 days retention"
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A does not answer the question correctly, while Model Output B provides the correct retention length"
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A introduces incorrect information, while Model Output B stays faithful to the expected reference"
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A is verbose with incorrect information, while Model Output B is concise and correct"
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B accurately provides the log retention length of 90 days, adhering to all evaluation criteria."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A correctly states the log retention length as 90 days, while Model Output B incorrectly states it as 48 hours."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B provide a direct answer to the question, although Model Output B's answer is incorrect."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A provides a faithful answer without adding incorrect information, while Model Output B introduces incorrect information about log expiration."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B are concise, but Model Output A is more accurate and directly answers the question without unnecessary verbosity."
+            }
+          ],
+          "overall_winner": "A",
+          "global_rationale": "Model Output A is the overall winner because it accurately and concisely answers the question about log retention length."
+        },
+        "is_consistent": true,
+        "final_winner": "B"
+      }
+    },
+    {
+      "case_id": 10,
+      "input": "Identify the primary load balancer strategy.",
+      "consistent_order_agreement": false,
+      "assigned_winner": "TIE",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A incorrectly identifies the primary load balancer strategy as Round Robin, while Model Output B correctly identifies it as Least connections."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B provide a complete answer to the question, although only Model Output B is correct."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A introduces incorrect information (Round Robin), while Model Output B provides a faithful answer (Least connections)."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B are concise and do not contain unnecessary information, although Model Output B is slightly longer due to the addition of 'dynamic weighting' which does not detract from the correctness of the answer."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B is the overall winner because it correctly identifies the primary load balancer strategy as Least connections, while Model Output A provides an incorrect answer."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A correctly identifies the primary load balancer strategy as 'Least connections', while Model Output B incorrectly states 'Round Robin selection routing'."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B provide a single strategy, fulfilling the question's request for the primary load balancer strategy, though Model Output A adds unnecessary detail."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 0.5,
+              "score_b": 1,
+              "rationale": "Model Output B directly answers the question without adding extra information, whereas Model Output A includes 'dynamic weighting', which is not requested and could be considered hallucinated detail."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 0.5,
+              "score_b": 1,
+              "rationale": "Model Output B provides a concise answer, while Model Output A includes additional, unnecessary words ('dynamic weighting') that do not contribute to answering the question."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B is more faithful to the question and provides a concise answer without unnecessary details."
+        },
+        "is_consistent": false,
+        "final_winner": "TIE"
+      }
+    },
+    {
+      "case_id": 11,
+      "input": "What code coverage is required?",
+      "consistent_order_agreement": true,
+      "assigned_winner": "A",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A correctly states the required code coverage as 85%, while Model Output B provides incorrect information by stating there is no strict limit."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A fully answers the question about the required code coverage, whereas Model Output B does not address the question."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A provides a faithful response by directly answering the question without adding unnecessary details, while Model Output B introduces unrelated information about pull requests."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A is concise and directly answers the question, whereas Model Output B is not only incorrect but also does not provide relevant information to the question asked."
+            }
+          ],
+          "overall_winner": "A",
+          "global_rationale": "Model Output A accurately and concisely answers the question about the required code coverage."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A does not provide the required code coverage percentage, while Model Output B correctly states the 85% minimum threshold."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A does not answer the question about the required code coverage, whereas Model Output B provides the complete answer."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Neither model output introduces hallucinated details, but Model Output A fails to provide the necessary information, while Model Output B accurately represents the expected reference."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A is verbose without providing the necessary information, whereas Model Output B is concise and directly answers the question."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B accurately and concisely provides the required code coverage percentage, adhering to all evaluation criteria."
+        },
+        "is_consistent": true,
+        "final_winner": "A"
+      }
+    },
+    {
+      "case_id": 12,
+      "input": "What protocol is used for device streaming?",
+      "consistent_order_agreement": true,
+      "assigned_winner": "A",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A correctly identifies WebSockets as the protocol used for device streaming, while Model Output B incorrectly suggests standard long polling requests via HTTP/1.1."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B provide a direct answer to the question, although only Model Output A is correct."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A provides a faithful answer by directly stating the correct protocol without adding unnecessary details, while Model Output B introduces incorrect information."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A is concise and directly answers the question without verbosity, whereas Model Output B provides an incorrect and slightly longer response."
+            }
+          ],
+          "overall_winner": "A",
+          "global_rationale": "Model Output A is the overall winner because it accurately and concisely identifies WebSockets as the protocol used for device streaming."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A incorrectly states the use of standard long polling requests via HTTP/1.1, while Model Output B correctly identifies WebSockets as the protocol used for device streaming."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B provide a direct answer to the question, although only Model Output B is correct."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A introduces incorrect information (standard long polling requests via HTTP/1.1) not present in the expected reference, while Model Output B faithfully represents the expected answer without adding extraneous details."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A provides an unnecessarily verbose and incorrect answer, whereas Model Output B offers a concise and correct response."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B is the overall winner because it accurately and concisely identifies WebSockets as the protocol used for device streaming."
+        },
+        "is_consistent": true,
+        "final_winner": "A"
+      }
+    },
+    {
+      "case_id": 13,
+      "input": "Where are secrets stored?",
+      "consistent_order_agreement": true,
+      "assigned_winner": "B",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A provides incorrect information, while Model Output B matches the Expected Reference Output."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B provide a direct answer to the question, but only Model Output B is correct."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A introduces incorrect information not present in the Expected Reference, while Model Output B faithfully represents the expected answer."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both outputs are concise and directly address the question without unnecessary verbosity."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B is the overall winner because it accurately and concisely matches the Expected Reference Output."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A correctly identifies AWS Secrets Manager as the location where secrets are stored, while Model Output B incorrectly suggests hardcoding in setting profiles."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B provide a direct answer to the question, although only Model Output A is correct."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A faithfully represents the expected reference without adding extraneous details, whereas Model Output B introduces an incorrect and potentially insecure practice."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both outputs are concise and directly address the question without unnecessary verbosity."
+            }
+          ],
+          "overall_winner": "A",
+          "global_rationale": "Model Output A is the overall winner because it accurately and concisely identifies AWS Secrets Manager as the correct location for storing secrets."
+        },
+        "is_consistent": true,
+        "final_winner": "B"
+      }
+    },
+    {
+      "case_id": 14,
+      "input": "Is IPv6 supported natively?",
+      "consistent_order_agreement": true,
+      "assigned_winner": "A",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 0.8,
+              "score_b": 0,
+              "rationale": "Model Output A is closer to the truth but lacks specificity, while Model Output B is incorrect"
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 0.8,
+              "score_b": 0,
+              "rationale": "Model Output A implies support but doesn't explicitly mention IPv6, while Model Output B is incomplete and incorrect"
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 0.9,
+              "score_b": 0,
+              "rationale": "Model Output A doesn't introduce incorrect details, whereas Model Output B provides false information"
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 0.9,
+              "score_b": 0.5,
+              "rationale": "Model Output A is concise and to the point, while Model Output B, although brief, is incorrect"
+            }
+          ],
+          "overall_winner": "A",
+          "global_rationale": "Model Output A is the overall winner due to its higher scores across all criteria, despite lacking specificity in its response."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A is incorrect as it states IPv6 is not supported, while Model Output B correctly implies support for IPv6 with dual-stack network layers."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both Model Output A and Model Output B provide a direct answer to the question, but only Model Output B's answer aligns with the expected reference."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A introduces incorrect information (internal networks remain IPv4 only), while Model Output B stays faithful to the expected reference by mentioning dual-stack, which aligns with 'dual-stack IPv6'."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 1,
+              "rationale": "Both outputs are concise and directly address the question without unnecessary verbosity, but Model Output B is more accurate and thus preferable."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B is the overall winner because it accurately and concisely addresses the question about IPv6 support."
+        },
+        "is_consistent": true,
+        "final_winner": "A"
+      }
+    },
+    {
+      "case_id": 15,
+      "input": "What is cache eviction strategy?",
+      "consistent_order_agreement": true,
+      "assigned_winner": "A",
+      "raw_logs": {
+        "run_1_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A correctly identifies the cache eviction strategy as LRU, while Model Output B provides an incorrect strategy."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A fully answers the question by providing the LRU strategy, whereas Model Output B does not address the question correctly."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A provides a faithful response by directly answering the question without adding unnecessary details, while Model Output B introduces unrelated information."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 1,
+              "score_b": 0,
+              "rationale": "Model Output A is concise and directly answers the question, whereas Model Output B is not only incorrect but also does not provide a relevant answer to the question asked."
+            }
+          ],
+          "overall_winner": "A",
+          "global_rationale": "Model Output A accurately and concisely answers the question about cache eviction strategy."
+        },
+        "run_2_verdict": {
+          "per_criterion_eval": [
+            {
+              "criterion": "Correctness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A provides incorrect information, while Model Output B matches the Expected Reference Output."
+            },
+            {
+              "criterion": "Completeness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A does not answer the question, whereas Model Output B provides the complete and correct answer."
+            },
+            {
+              "criterion": "Faithfulness",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A introduces unrelated information, while Model Output B stays faithful to the expected output without adding unnecessary details."
+            },
+            {
+              "criterion": "Length Calibration",
+              "score_a": 0,
+              "score_b": 1,
+              "rationale": "Model Output A is verbose and does not provide relevant information, whereas Model Output B is concise and directly answers the question."
+            }
+          ],
+          "overall_winner": "B",
+          "global_rationale": "Model Output B accurately and concisely answers the question about cache eviction strategy, aligning with the Expected Reference Output."
+        },
+        "is_consistent": true,
+        "final_winner": "A"
+      }
+    }
+  ]
+}
